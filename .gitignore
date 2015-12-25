@@ -1,0 +1,12 @@
+# general ignores
+*~
+*.lock
+*.DS_Store
+
+# ignore web files
+www/*
+!www/.gitkeep
+
+# vagrant-specific
+.vagrant
+Vagrantfile
