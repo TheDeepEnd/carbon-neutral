@@ -13,9 +13,9 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: 4getS0methings
-  socket: /tmp/mysql.sock
+  username: # MySQL username here
+  password: # MySQL password here
+  socket: /tmp/mysql.sock # Wherever your mysql socket is, find your mysql.conf file if you're unsure.
 
 development:
   <<: *default
