@@ -1,29 +1,28 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <h3>Displaying housing data for <%= @house.profile.firstname %></h3>
 
-<p>
-  <strong>Profile:</strong>
-  <%= @house.profile %>
-</p>
+  <hr>
 
-<p>
-  <strong>Electricity:</strong>
-  <%= @house.electricity %>
-</p>
+  <p>
+    <strong>Electricity:</strong>
+    <%= @house.electricity %>
+  </p>
 
-<p>
-  <strong>Fuel:</strong>
-  <%= @house.fuel %>
-</p>
+  <p>
+    <strong>Fuel:</strong>
+    <%= @house.fuel %>
+  </p>
 
-<p>
-  <strong>Gas:</strong>
-  <%= @house.gas %>
-</p>
+  <p>
+    <strong>Gas:</strong>
+    <%= @house.gas %>
+  </p>
 
-<p>
-  <strong>Water:</strong>
-  <%= @house.water %>
-</p>
+  <p>
+    <strong>Water:</strong>
+    <%= @house.water %>
+  </p>
 
-<%= link_to 'Edit', edit_profile_house_path(@house) %> |
-<%= link_to 'Back', profiles_path %>
+  <%= link_to 'Edit', edit_profile_house_path(@house), class: "button success" %>
+  <%= link_to 'Back', @profile, class: "button info" %>
+</div>

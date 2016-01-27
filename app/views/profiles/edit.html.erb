@@ -1,6 +1,9 @@
-<h1>Editing Profile</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @profile %> |
-<%= link_to 'Back', profiles_path %>
+<div class="row">
+  <h1>Editing Profile</h1>
+</div>
+<div class="row">
+  <%= render 'form' %>
+</div>
+<div class="row">
+  <%= link_to 'Back', @profile, class: "button info" %>
+</div>

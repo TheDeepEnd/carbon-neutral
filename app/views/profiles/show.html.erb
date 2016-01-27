@@ -1,6 +1,5 @@
 <div class="row">
-  <p id="notice"><%= notice %></p>
-
+  <h3>Profile Data</h3>
   <h4>
     <strong>Firstname:</strong>
     <%= @profile.firstname %>
@@ -35,8 +34,45 @@
     <strong>Zipcode:</strong>
     <%= @profile.zipcode %>
   </h4>
-  <%= link_to 'New House', new_profile_house_path(@profile), class: "button success" %>
-  <%= link_to 'Show House Data', profile_house_path(@profile), class: "button info" %>
-  <%= link_to 'Edit', edit_profile_path(@profile), class: "button info" %> |
+
+  <hr>
+  <h3>Housing Data</h3>
+  <h4>
+    <strong>Electricity Consumption: </strong>
+    <% if @house.electricity? %>
+      <%= @house.electricity %> kilowatts
+    <% else %>
+      No Data entered yet
+    <% end %>
+  </h4>
+  <h4>
+    <strong>Gas Consumption: </strong>
+    <% if @house.gas? %>
+      <%= @house.gas %> cubic feet
+    <% else %>
+      No Data entered yet
+    <% end %>
+  </h4>
+  <h4>
+    <strong>Fuel Consumption: </strong>
+    <% if @house.fuel? %>
+      <%= @house.fuel %> gallons
+    <% else %>
+      No Data entered yet
+    <% end %>
+  </h4>
+  <h4>
+    <strong>Water Consumption: </strong>
+    <% if @house.water? %>
+      <%= @house.water %> gallons
+    <% else %>
+      No Data entered yet
+    <% end %>
+  </h4>
+
+  <hr>
+
+  <%= link_to 'Edit House Data', edit_profile_house_path(@profile), class: "button success" %>
+  <%= link_to 'Edit Profile Data', edit_profile_path(@profile), class: "button info" %>
   <%= link_to 'Back', profiles_path, class: "button secondary" %>
 </div>

@@ -1,23 +1,19 @@
 <%= simple_form_for(@profile) do |f| %>
   <%= f.error_notification %>
-  <div class="row">
-
-
-      <div class="form-inputs">
-        <%= f.input :firstname %>
-        <%= f.input :lastname %>
-        <%= f.input :age %>
-        <%= f.input :country %>
-        <%= f.input :state %>
-        <%= f.input :city %>
-        <%= f.input :zipcode %>
-      </div>
+    <div class="form-inputs">
+      <%= f.input :firstname %>
+      <%= f.input :lastname %>
+      <%= f.input :age %>
+      <%= f.input :country %>
+      <%= f.input :state %>
+      <%= f.input :city %>
+      <%= f.input :zipcode %>
+    </div>
   </div>
 
   <hr>
-  
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
+
+  <div class="form-actions row">
+    <%= f.button :submit %>
   </div>
 <% end %>

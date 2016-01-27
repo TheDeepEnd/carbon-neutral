@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_house, only: [:show]
 
   # GET /profiles
   # GET /profiles.json
@@ -66,8 +67,12 @@ class ProfilesController < ApplicationController
       @profile = Profile.find(params[:id])
     end
 
+    def set_house
+      @house = @profile.house
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:firstname, :lastname, :age, :country, :state, :city, :zipcode)
+      params.require(:profile).permit(:firstname, :lastname, :age, :country, :state, :city, :zipcode, house_attributes: [:id, :electricity, :water, :fuel, :gas])
     end
 end
