@@ -15,7 +15,6 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     @profile = Profile.new
-    @house = @profile.houses.build
   end
 
   # GET /profiles/1/edit
@@ -69,6 +68,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:firstname, :lastname, :age, :country, :state, :city, :zipcode, :houses_attributes => [:id, :electricity, :gas, :fuel, :water])
+      params.require(:profile).permit(:firstname, :lastname, :age, :country, :state, :city, :zipcode)
     end
 end

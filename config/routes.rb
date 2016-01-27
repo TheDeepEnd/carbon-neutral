@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :houses
-  resources :profiles
+
+  resources :profiles do
+    resource :house
+  end
   root 'homepage#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

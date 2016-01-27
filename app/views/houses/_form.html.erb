@@ -1,8 +1,7 @@
-<%= simple_form_for(@house) do |f| %>
+<%= simple_form_for([@profile, @house], :url => profile_house_path(@profile)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :profile %>
     <%= f.input :electricity %>
     <%= f.input :fuel %>
     <%= f.input :gas %>

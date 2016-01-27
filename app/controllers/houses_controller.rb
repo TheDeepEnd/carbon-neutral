@@ -1,6 +1,6 @@
 class HousesController < ApplicationController
   before_action :set_house, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_profile, only: [:new, :show, :edit, :update, :destroy]
   # GET /houses
   # GET /houses.json
   def index
@@ -14,7 +14,7 @@ class HousesController < ApplicationController
 
   # GET /houses/new
   def new
-    @house = House.new
+    @house = @profile.build_house
   end
 
   # GET /houses/1/edit
@@ -28,7 +28,7 @@ class HousesController < ApplicationController
 
     respond_to do |format|
       if @house.save
-        format.html { redirect_to @house, notice: 'House was successfully created.' }
+        format.html { redirect_to profile_house_path, notice: 'House was successfully created.' }
         format.json { render :show, status: :created, location: @house }
       else
         format.html { render :new }
@@ -64,9 +64,12 @@ class HousesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_house
-      @house = House.find(params[:id])
+      @house = House.find(params[:profile_id])
     end
 
+    def set_profile
+      @profile = Profile.find(params[:profile_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_params
       params.require(:house).permit(:profile_id, :electricity, :fuel, :gas, :water)

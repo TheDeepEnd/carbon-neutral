@@ -15,16 +15,7 @@
   </div>
 
   <hr>
-  <div class="row">
-      <h4>Housing Data</h4>
-      <div class="form-inputs">
-        <%= f.simple_fields_for :houses do |house| %>
-          <%= house.input :electricity %>
-          <%= house.input :gas %>
-          <%= house.input :fuel %>
-          <%= house.input :water %>
-        <% end %>
-      </div>
+  
       <div class="form-actions">
         <%= f.button :submit %>
       </div>

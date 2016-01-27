@@ -35,7 +35,8 @@
     <strong>Zipcode:</strong>
     <%= @profile.zipcode %>
   </h4>
-
+  <%= link_to 'New House', new_profile_house_path(@profile), class: "button success" %>
+  <%= link_to 'Show House Data', profile_house_path(@profile), class: "button info" %>
   <%= link_to 'Edit', edit_profile_path(@profile), class: "button info" %> |
   <%= link_to 'Back', profiles_path, class: "button secondary" %>
 </div>
