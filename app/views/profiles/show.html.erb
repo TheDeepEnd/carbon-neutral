@@ -1,0 +1,41 @@
+<div class="row">
+  <p id="notice"><%= notice %></p>
+
+  <h4>
+    <strong>Firstname:</strong>
+    <%= @profile.firstname %>
+  </h4>
+
+  <h4>
+    <strong>Lastname:</strong>
+    <%= @profile.lastname %>
+  </h4>
+
+  <h4>
+    <strong>Age:</strong>
+    <%= @profile.age %>
+  </h4>
+
+  <h4>
+    <strong>Country:</strong>
+    <%= @profile.country %>
+  </h4>
+
+    <h4>
+    <strong>State:</strong>
+    <%= @profile.state %>
+  </h4>
+
+  <h4>
+    <strong>City:</strong>
+    <%= @profile.city %>
+  </h4>
+
+  <h4>
+    <strong>Zipcode:</strong>
+    <%= @profile.zipcode %>
+  </h4>
+
+  <%= link_to 'Edit', edit_profile_path(@profile), class: "button info" %> |
+  <%= link_to 'Back', profiles_path, class: "button secondary" %>
+</div>

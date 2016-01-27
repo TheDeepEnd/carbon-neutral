@@ -21,6 +21,8 @@ gem 'foundation-icons-sass-rails'
 gem "font-awesome-rails"
 # Use Simple Form for input fields
 gem 'simple_form'
+# Enables Simple Form's country select field
+gem 'country_select'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
