@@ -15,6 +15,10 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'therubyracer', platforms: :ruby
 # Use Foundation 5 for styling framework
 gem 'foundation-rails'
+# Installs the Foundation font icons
+gem 'foundation-icons-sass-rails'
+# Use Font Awesome for awesome fonts and icons
+gem "font-awesome-rails"
 # Use Simple Form for input fields
 gem 'simple_form'
 # Use jquery as the JavaScript library
