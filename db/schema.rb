@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160127043820) do
+ActiveRecord::Schema.define(version: 20160127061506) do
+
+  create_table "houses", force: :cascade do |t|
+    t.integer  "profile_id",  limit: 4
+    t.decimal  "electricity",           precision: 10
+    t.decimal  "fuel",                  precision: 10
+    t.decimal  "gas",                   precision: 10
+    t.decimal  "water",                 precision: 10
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
+  add_index "houses", ["profile_id"], name: "index_houses_on_profile_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.string   "firstname",  limit: 255
@@ -25,4 +37,5 @@ ActiveRecord::Schema.define(version: 20160127043820) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "houses", "profiles"
 end

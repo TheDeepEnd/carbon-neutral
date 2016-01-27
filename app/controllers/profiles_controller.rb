@@ -15,6 +15,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     @profile = Profile.new
+    @house = @profile.houses.build
   end
 
   # GET /profiles/1/edit
@@ -25,7 +26,6 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
-
     respond_to do |format|
       if @profile.save
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
@@ -69,6 +69,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:firstname, :lastname, :age, :country, :state, :city, :zipcode)
+      params.require(:profile).permit(:firstname, :lastname, :age, :country, :state, :city, :zipcode, :houses_attributes => [:id, :electricity, :gas, :fuel, :water])
     end
 end
