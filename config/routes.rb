@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-
   resources :profiles do
     resource :house
+    resource :expense
   end
   root 'homepage#index'
 

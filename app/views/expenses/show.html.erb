@@ -1,0 +1,23 @@
+  <h3>Displaying expense data for <%= @expense.profile.firstname %></h3>
+<p>
+  <strong>Clothing:</strong>
+  <%= @expense.clothing %>
+</p>
+
+<p>
+  <strong>Healthcare:</strong>
+  <%= @expense.healthcare %>
+</p>
+
+<p>
+  <strong>Vehicle:</strong>
+  <%= @expense.vehicle %>
+</p>
+
+<p>
+  <strong>Home maintenance:</strong>
+  <%= @expense.home_maintenance %>
+</p>
+
+<%= link_to 'Edit', edit_profile_expense_path(@expense), class: "button success" %>
+<%= link_to 'Back', @profile, class: "button info" %>
