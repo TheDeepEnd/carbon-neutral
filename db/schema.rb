@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128054106) do
+ActiveRecord::Schema.define(version: 20160218035629) do
 
   create_table "expenses", force: :cascade do |t|
     t.integer  "profile_id",       limit: 4
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20160128054106) do
   end
 
   add_index "expenses", ["profile_id"], name: "index_expenses_on_profile_id", using: :btree
+
+  create_table "foods", force: :cascade do |t|
+    t.decimal  "red_meat",     precision: 10
+    t.decimal  "poultry",      precision: 10
+    t.decimal  "seafood",      precision: 10
+    t.decimal  "vegetables",   precision: 10
+    t.decimal  "milk",         precision: 10
+    t.decimal  "other_drinks", precision: 10
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
 
   create_table "houses", force: :cascade do |t|
     t.integer  "profile_id",  limit: 4
