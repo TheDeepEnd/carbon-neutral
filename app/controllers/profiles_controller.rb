@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
   before_action :set_house, only: [:show]
   before_action :set_expense, only: [:show]
+  before_action :set_food, only: [:show]
 
   # GET /profiles
   # GET /profiles.json
@@ -17,6 +18,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     @profile = Profile.new
+    logger.debug "Serving form for new profile."
   end
 
   # GET /profiles/1/edit
@@ -31,6 +33,7 @@ class ProfilesController < ApplicationController
       if @profile.save
         format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
+        logger.debug "Profile creation success"
       else
         format.html { render :new }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
@@ -76,8 +79,12 @@ class ProfilesController < ApplicationController
       @expense = @profile.expense
     end
 
+    def set_food
+      @food = @profile.food
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:firstname, :lastname, :age, :country, :state, :city, :zipcode, house_attributes: [:id, :electricity, :water, :fuel, :gas], expense_attributes: [:id, :clothing, :healthcare, :vehicle, :home_maintenance])
+      params.require(:profile).permit(:firstname, :lastname, :age, :country, :state, :city, :zipcode, house_attributes: [:id, :electricity, :water, :fuel, :gas], expense_attributes: [:id, :clothing, :healthcare, :vehicle, :home_maintenance], food_attributes: [:id, :red_meat, :poultry, :seafood, :vegetables, :milk, :other_drinks])
     end
 end

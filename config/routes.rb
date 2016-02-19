@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :foods
   resources :profiles do
     resource :house
     resource :expense
+    resource :food
   end
   root 'homepage#index'
 

@@ -37,84 +37,137 @@
 </div>
 <hr>
 <div class="row">
-<div class="medium-6 columns">
-  <h3>Housing Data</h3>
-  <h4>
-    <strong>Electricity Consumption: </strong>
-    <% if @house.electricity? %>
-      <%= @house.electricity %> kilowatts
-    <% else %>
-      No Data entered yet
-    <% end %>
-  </h4>
-  <h4>
-    <strong>Gas Consumption: </strong>
-    <% if @house.gas? %>
-      <%= @house.gas %> cubic feet
-    <% else %>
-      No Data entered yet
-    <% end %>
-  </h4>
-  <h4>
-    <strong>Fuel Consumption: </strong>
-    <% if @house.fuel? %>
-      <%= @house.fuel %> gallons
-    <% else %>
-      No Data entered yet
-    <% end %>
-  </h4>
-  <h4>
-    <strong>Water Consumption: </strong>
-    <% if @house.water? %>
-      <%= @house.water %> gallons
-    <% else %>
-      No Data entered yet
-    <% end %>
-  </h4>
-</div>
-<div class="medium-6 columns">
-  <h3>Expense Data</h3>
-  <h4>
-    <strong>Clothing Expenses: </strong>
-    <% if @expense.clothing? %>
-      <%= @expense.clothing %> dollars
-    <% else %>
-      No Data entered yet
-    <% end %>
-  </h4>
-  <h4>
-    <strong>Healthcare Expenses: </strong>
+  <div class="medium-6 columns">
+    <h3>Housing Data</h3>
+    <h4>
+      <strong>Electricity Consumption: </strong>
+      <% if @house.electricity? %>
+        <%= @house.electricity %> kilowatts
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+    <h4>
+      <strong>Gas Consumption: </strong>
+      <% if @house.gas? %>
+        <%= @house.gas %> cubic feet
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+    <h4>
+      <strong>Fuel Consumption: </strong>
+      <% if @house.fuel? %>
+        <%= @house.fuel %> gallons
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+    <h4>
+      <strong>Water Consumption: </strong>
+      <% if @house.water? %>
+        <%= @house.water %> gallons
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+  </div>
+  <div class="medium-6 columns">
+    <h3>Expense Data</h3>
+    <h4>
+      <strong>Clothing Expenses: </strong>
+      <% if @expense.clothing? %>
+        <%= @expense.clothing %> dollars
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+    <h4>
+      <strong>Healthcare Expenses: </strong>
 
-    <% if @expense.healthcare? %>
-      <%= @expense.healthcare %> dollars
-    <% else %>
-      No Data entered yet
-    <% end %>
-  </h4>
-  <h4>
-    <strong>Vehicle Expenses: </strong>
-    <% if @expense.vehicle? %>
-      <%= @expense.vehicle %> dollars
-    <% else %>
-      No Data entered yet
-    <% end %>
-  </h4>
-  <h4>
-    <strong>Home Maintenance Expenses: </strong>
-    <% if @expense.home_maintenance? %>
-      <%= @expense.home_maintenance %> dollars
-    <% else %>
-      No Data entered yet
-    <% end %>
-  </h4>
+      <% if @expense.healthcare? %>
+        <%= @expense.healthcare %> dollars
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+    <h4>
+      <strong>Vehicle Expenses: </strong>
+      <% if @expense.vehicle? %>
+        <%= @expense.vehicle %> dollars
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+    <h4>
+      <strong>Home Maintenance Expenses: </strong>
+      <% if @expense.home_maintenance? %>
+        <%= @expense.home_maintenance %> dollars
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+  </div>
+  <hr>
+  <div class="medium-6 columns">
+    <h3>Food Data</h3>
+    <h4>
+      <strong>Red Meat consumption: </strong>
+      <% if @food.red_meat? %>
+        <%= @food.red_meat %> pounds
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+    <h4>
+      <strong>Poultry consumption: </strong>
 
-</div>
+      <% if @food.poultry? %>
+        <%= @food.poultry %> pounds
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+    <h4>
+      <strong>Seafood consumption: </strong>
+      <% if @food.seafood? %>
+        <%= @food.seafood %> pounds
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+    <h4>
+      <strong>Vegetable consumption: </strong>
+      <% if @food.vegetables? %>
+        <%= @food.vegetables %> pounds
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+    <h4>
+      <strong>Milk consumption: </strong>
+      <% if @food.milk? %>
+        <%= @food.milk %> gallons
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+    <h4>
+      <strong>Other drinks consumption: </strong>
+      <% if @food.other_drinks? %>
+        <%= @food.other_drinks %> gallons
+      <% else %>
+        No Data entered yet
+      <% end %>
+    </h4>
+  </div>
 </div>
 <hr>
 
 <div class="row">
   <%= link_to 'Edit House Data', edit_profile_house_path(@profile), class: "button success" %>
   <%= link_to 'Edit Expense Data', edit_profile_expense_path(@profile), class: "button success" %>
+  <%= link_to 'Edit Food Data', edit_profile_food_path(@profile), class: "button success" %>
   <%= link_to 'Edit Profile Data', edit_profile_path(@profile), class: "button info" %>
   <%= link_to 'Back', profiles_path, class: "button secondary" %>
 </div>

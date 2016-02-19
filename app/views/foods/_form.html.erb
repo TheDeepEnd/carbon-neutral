@@ -1,4 +1,4 @@
-<%= simple_form_for(@food) do |f| %>
+<%= simple_form_for([@profile,@food], :url => profile_food_path(@profile)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">

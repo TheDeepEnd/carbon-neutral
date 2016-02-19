@@ -14,7 +14,7 @@ class FoodsController < ApplicationController
 
   # GET /foods/new
   def new
-    @food = Food.new
+    @food = profile.build_food
   end
 
   # GET /foods/1/edit
@@ -67,8 +67,11 @@ class FoodsController < ApplicationController
       @food = Food.find(params[:id])
     end
 
+    def set_profile
+      @profile = Profile.find(params[:profile_id])
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
-      params.require(:food).permit(:red_meat, :poultry, :seafood, :vegetables, :milk, :other_drinks)
+      params.require(:food).permit(:profile_id, :red_meat, :poultry, :seafood, :vegetables, :milk, :other_drinks)
     end
 end
